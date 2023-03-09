@@ -61,11 +61,11 @@ window.onresize = () => {
 
 
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('/src/assets/gltf/');
+dracoLoader.setDecoderPath('../../public/gltf/');
 const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 let mixer;
-loader.load('/src/assets/LittlestTokyo.glb', function (gltf) {
+loader.load('../../public/LittlestTokyo.glb', function (gltf) {
   console.log('控制台查看加载gltf文件返回的对象结构', gltf);
   console.log('gltf对象场景属性', gltf.scene);
   // 返回的场景对象gltf.scene插入到threejs场景中
