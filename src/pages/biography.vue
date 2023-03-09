@@ -1,6 +1,8 @@
 <template>
   <div>
-履历
+    履历
+    <p>public</p>
+    <img src="../../public/wenli5.jpg" alt="">
   </div>
 </template>
 
@@ -8,6 +10,4 @@
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

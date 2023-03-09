@@ -1,6 +1,8 @@
 <template>
   <div>
-首页
+    首页
+    <p>assets</p>
+    <img src="../assets/wenli2.jpg" alt="">
   </div>
 </template>
 
@@ -8,6 +10,4 @@
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
