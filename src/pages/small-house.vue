@@ -59,13 +59,15 @@ window.onresize = () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 };
 
+const gltfPath = '/gltf/'
+const LittlestTokyoPath = '/LittlestTokyo.glb'
 
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('../../public/gltf/');
+dracoLoader.setDecoderPath(gltfPath);
 const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 let mixer;
-loader.load('../../public/LittlestTokyo.glb', function (gltf) {
+loader.load(LittlestTokyoPath, function (gltf) {
   console.log('控制台查看加载gltf文件返回的对象结构', gltf);
   console.log('gltf对象场景属性', gltf.scene);
   // 返回的场景对象gltf.scene插入到threejs场景中

@@ -2,7 +2,7 @@
   <div>
     履历
     <p>public</p>
-    <img src="../../public/wenli5.jpg" alt="">
+    <img src="/public/wenli5.jpg" alt="">
   </div>
 </template>
 
