@@ -1,56 +1,67 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-aside width="200px">
-
-        <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" unique-opened>
-          <el-menu-item index="1">
-            <span>首页</span>
-          </el-menu-item>
-          <el-menu-item index="2">
-            <span>个人履历</span>
-          </el-menu-item>
-          <el-menu-item index="3">
-            <span>3D作品</span>
-          </el-menu-item>
-          <!-- <el-sub-menu index="3">
-            <template #title>
-              <span>3D作品</span>
-            </template>
-            <el-menu-item index="4">
-              <span>小屋子</span>
-            </el-menu-item>
-          </el-sub-menu> -->
-        </el-menu>
-      </el-aside>
-      <el-main>
-        <router-view></router-view>
-      </el-main>
-    </el-container>
+  <div class="box">
+    <div class="left">
+      <div class="item" v-for="(item, key) in titleMap" :key="key">
+        <router-link :to="item[1]">YQL--{{ item[0] }}</router-link>
+      </div>
+    </div>
+    <router-view class="content"></router-view>
   </div>
 </template>
 
 <script setup>
-import { useRouter, useRoute } from 'vue-router'
-const router = useRouter()
-const route = useRoute()
-const titleMap = new Map([
-  [1, '/'],
-  [2, '/biography'],
-  [3, '/dopus'],
-  [4, '/small-house'],
-])
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath)
-  router.push({
-    path: titleMap.get(Number(key))
-  })
 
-}
+const titleMap = new Map([
+  ["首页", '/'],
+  ["小社区", '/small-house'],
+])
 </script>
 
 <style scoped>
-.common-layout{
+.box {
   height: 100%;
+  display: flex;
+}
+
+.left {
+  width: 300px;
+  /* background: url('../assets/wenli.jpg'); */
+  /* background-size: 200px 200px; */
+  background: linear-gradient(180deg, #8A2BE2, #F08080, #40E0D0);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding-top: 20px;
+}
+
+.content {
+  flex: 1;
+  /* background: linear-gradient(45deg, #DDA0DD, #DDA0DD, #DDA0DD); */
+}
+
+.item {
+  width: 80%;
+  height: 60px;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+
+}
+
+.item:hover {
+  background: linear-gradient(45deg, #8A2BE2, #F08080, #40E0D0);
+}
+
+.item a {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-family: math;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  padding-left: 40px;
 }
 </style>
