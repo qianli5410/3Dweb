@@ -13,7 +13,7 @@
 
 const titleMap = new Map([
   ["首页", '/'],
-  ["小别墅", '/small-house'],
+  ["小社区", '/small-house'],
 ])
 </script>
 

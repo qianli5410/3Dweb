@@ -5,11 +5,11 @@ import * as THREE from 'three';
 // 引入轨道控制器扩展库OrbitControls.js
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-export const useThree = function({domId,width,height}){
+export const useThree = function({domId,width,height,fov}){
  
   const scene = new THREE.Scene();
   let showLoding = ref(true)
-  const camera = new THREE.PerspectiveCamera(40, width / height, 1, 5000);
+  const camera = new THREE.PerspectiveCamera(fov, width / height, 1, 5000);
   camera.position.set(5, 3, 8);
   
   const renderer = new THREE.WebGLRenderer();

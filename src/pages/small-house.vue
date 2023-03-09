@@ -16,6 +16,7 @@ nextTick(() => {
     domId: "content",
     width: dom.clientWidth,
     height: dom.clientHeight-2,
+    fov:40
   })
   const gltfPath = '/gltf/'
   const LittlestTokyoPath = '/LittlestTokyo.glb'
