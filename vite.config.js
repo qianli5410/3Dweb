@@ -15,6 +15,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
   base:'./',
+  publicDir: 'public', // 静态资源服务的文件夹
   // ...
   plugins: [
     vue(),
